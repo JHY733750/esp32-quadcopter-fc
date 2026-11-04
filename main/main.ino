@@ -311,6 +311,7 @@ void loop() {
     for(int i=0; i<3; i++){
         integral[i] += e[i] * dt;
         g[i] = P[i]*e[i] + I[i]*(integral[i]) + D[i]*(e[i]-Prev_e[i])/dt;
+        Prev_e[i] = e[i];
         // Serial.print(", g: ");
         // Serial.print(g[i]);
     }
